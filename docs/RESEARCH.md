@@ -82,3 +82,39 @@ Sources: vev.design/blog/micro-interaction-examples/ · awwwards.com · nngroup.
 - Native CSS scroll-driven reveals (drop JS dependency for reveal system)
 - WebGL/Three.js aurora background toggleable behind particles
 - AI "ask me" contact widget (links to Telegram)
+
+## 9. ADVANCED — 3D Interfaces & WebGL (deep-read from live articles)
+
+### The 2026 WebGL surge — creativedevjobs.com (full article read)
+- **Big surge in WebGL/Three.js portfolios** — smooth animations, particle effects, interactive scenes, creative navigation patterns
+- Studied examples emphasize **3D storytelling**, not just decoration
+
+### 6 stunning WebGL portfolios — dev.to (full article read)
+- **Robin Mastromarino** (Paris) — clean WebGL animations, interactive design
+- **Keita Yamada** (Japan) — `100 Days of Poetry` gallery, 100 graphics, WebGL storytelling
+- **Rocani Studio** (Berlin) — interactive stories for TikTok's Khaby Lame
+
+### 160+ Three.js demos — freefrontend.com (read)
+- 3D models, lighting experiments, **camera movement**, immersive scenes
+- **GLSL shader demos**: chromatic-aberration sine wave (RGB channel separation via fragment shader), scroll-driven particle image matrix
+- Advanced: scroll-driven WebGL image transitions (Three.js)
+
+### Codrops / Smashing Magazine (RSS feeds — fresh articles)
+- **Codrops**: "Building an Infinite GSAP Scroll Gallery with Parallax and Flip Transitions", "Engineering a Real-Time 3D Experience in Webflow", "The Story Is in the Interaction — luxury brand digital experiences"
+- **Smashing**: "Thinking Outside The Box: Digital Design In The AI Era", "When It Makes Sense To 'Block' The Main Thread", "From Kickoff To First Concept — brand strategy to visual direction"
+
+## 10. ENGINE REPORT — Google SERP scraping (honest verdict)
+
+**Not feasible from this device.** Google serves a JS-only shell
+(`/httpservice/retry/enablejs`) to all non-browser clients.
+Tested: mobile UA, desktop UA, consent cookies, `gbv=1`, `udm=14` —
+all return the same shell. Requires a real browser engine (Playwright/
+Puppeteer) or the Google Custom Search JSON API (free 100 queries/day).
+`tools/google_search.py` detects the shell and fails gracefully;
+Brave + DDG tools cover the same search ground.
+
+**Search engine throttle rules (recorded from real usage):**
+- Brave: ~5 queries before HTTP 429 → space 15–30s
+- DuckDuckGo: image-CAPTCHA after bursts → space queries, use lite endpoint
+- Google: JS-gated entirely (no HTTP scraping)
+- Serpent API: free tier exhausted (HTTP 402)
