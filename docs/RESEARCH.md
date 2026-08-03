@@ -113,8 +113,14 @@ Puppeteer) or the Google Custom Search JSON API (free 100 queries/day).
 `tools/google_search.py` detects the shell and fails gracefully;
 Brave + DDG tools cover the same search ground.
 
+**Startpage — same verdict.** Serves a `jsgate` robot-wall (CSS shell +
+token, `jsgate_feedback_form`) to non-browser clients; GET, POST and
+cookie-jar retries all blocked. `tools/startpage_search.py` detects
+and reports it. Requires a real browser engine too.
+
 **Search engine throttle rules (recorded from real usage):**
 - Brave: ~5 queries before HTTP 429 → space 15–30s
 - DuckDuckGo: image-CAPTCHA after bursts → space queries, use lite endpoint
 - Google: JS-gated entirely (no HTTP scraping)
+- Startpage: JS-gate robot wall (no HTTP scraping)
 - Serpent API: free tier exhausted (HTTP 402)
