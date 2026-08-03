@@ -12,3 +12,5 @@ Thumbs.db
 
 # Local-only
 *.local
+.vercel/
+.vercel
