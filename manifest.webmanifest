@@ -1,0 +1,17 @@
+{
+  "name": "NEXUS — Developer · Creator · Innovator",
+  "short_name": "NEXUS",
+  "description": "Portfolio of Nexus — developer from Bangladesh. Web apps, AI tools, Telegram bots & automation.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#04050a",
+  "theme_color": "#04050a",
+  "icons": [
+    {
+      "src": "assets/img/favicon.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
