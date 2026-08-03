@@ -118,9 +118,23 @@ token, `jsgate_feedback_form`) to non-browser clients; GET, POST and
 cookie-jar retries all blocked. `tools/startpage_search.py` detects
 and reports it. Requires a real browser engine too.
 
+**abenassi/Google-Search-API (github.com/abenassi/Google-Search-API) —
+tested, fails.** Installed via `pip install git+...`, ran real queries:
+- Library request = `https://www.google.com/search?hl=&q=&num=&start=`
+  with `Mozilla/4.0 MSIE 8.0` UA (Python-2-era code, urllib2)
+- Result: **0 parsed results** (silent — worse than an error)
+- Wire proof: Google answers with 1412-byte "outdated browser" and
+  2416-byte "hello - Google Search" fallback pages — search box, no results
+- Same underlying wall as our direct tests: Google needs JS. The library
+  was last maintained for a Google that served static HTML and cannot
+  bypass the 2026 gate. It's installed (`pip list | grep -i google`) but
+  not usable from this device; would only work on networks where Google
+  still serves HTML to that UA.
+
 **Search engine throttle rules (recorded from real usage):**
 - Brave: ~5 queries before HTTP 429 → space 15–30s
 - DuckDuckGo: image-CAPTCHA after bursts → space queries, use lite endpoint
-- Google: JS-gated entirely (no HTTP scraping)
+- Google: JS-gated entirely (no HTTP scraping) — direct, `gbv=1`, `udm=14`,
+  consent cookies, and the abenassi library all fail identically
 - Startpage: JS-gate robot wall (no HTTP scraping)
 - Serpent API: free tier exhausted (HTTP 402)
